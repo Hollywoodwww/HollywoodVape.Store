@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🃏 JOKER VAPE SHOP - RANDM TORNADO 15000</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2d1b69 0%, #8b0000 50%, #4a148c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #39ff14;
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.3);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            color: #39ff14;
+            animation: neonGlow 2s ease-in-out infinite alternate;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            border-color: #39ff14;
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14;
+            transform: scale(1.1);
+        }
+
+        .cart-btn {
+            background: linear-gradient(45deg, #8b0000, #4a148c);
+            border: 2px solid #39ff14;
+            color: #39ff14;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .cart-btn:hover {
+            background: #39ff14;
+            color: #000;
+            box-shadow: 0 0 20px #39ff14;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #2d1b69 30%, #8b0000 70%, #0a0a0a 100%);
+            padding: 140px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(57, 255, 20, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(74, 20, 140, 0.15) 0%, transparent 50%);
+            animation: chaosMove 10s ease-in-out infinite;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 5px 5px 10px rgba(0,0,0,0.8);
+            animation: glitchText 3s ease-in-out infinite;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero .joker-subtitle {
+            font-size: 1.8rem;
+            color: #39ff14;
+            margin-bottom: 2rem;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            animation: slideInUp 1s ease 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease 0.4s both;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b0000, #4a148c);
+            color: #39ff14;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
+            animation: slideInUp 1s ease 0.6s both;
+            border: 3px solid #39ff14;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(57, 255, 20, 0.5);
+            background: #39ff14;
+            color: #000;
+        }
+
+        /* Joker Cards Decoration */
+        .joker-cards {
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card-1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .card-2 { top: 20%; right: 15%; animation-delay: 2s; }
+        .card-3 { bottom: 30%; left: 5%; animation-delay: 4s; }
+        .card-4 { bottom: 15%; right: 10%; animation-delay: 1s; }
+
+        /* Features */
+        .features {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #39ff14, #8b0000);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #39ff14, #8b0000, #4a148c, #39ff14);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(57, 255, 20, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            color: #39ff14;
+            text-shadow: 0 0 20px #39ff14;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-card p {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Products */
+        .products {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #8b0000 30%, #2d1b69 70%, #0a0a0a 100%);
+            position: relative;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 50%, #8b0000 100%);
+            border-radius: 25px;
+            padding: 2.5rem;
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid transparent;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #39ff14, #8b0000, #4a148c, #39ff14);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 25px;
+            animation: borderRotate 3s linear infinite;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 25px 60px rgba(57, 255, 20, 0.3);
+        }
+
+        .product-image {
+            width: 220px;
+            height: 220px;
+            background: rgba(57, 255, 20, 0.1);
+            border-radius: 20px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            z-index: 2;
+            border: 2px solid #39ff14;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+        }
+
+        .product-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #39ff14;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .product-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .spec {
+            background: rgba(57, 255, 20, 0.1);
+            padding: 1rem;
+            border-radius: 15px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: 1px solid #39ff14;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #39ff14;
+            margin: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 20px #39ff14;
+        }
+
+        .buy-btn {
+            background: linear-gradient(45deg, #8b0000, #4a148c);
+            border: 3px solid #39ff14;
+            color: #39ff14;
+            padding: 1.2rem 2.5rem;
+            border-radius: 25px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-btn:hover {
+            background: #39ff14;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(57, 255, 20, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+            border-top: 3px solid #39ff14;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #39ff14;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .footer-section a:hover {
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14;
+        }
+
+        /* Animations */
+        @keyframes neonGlow {
+            0% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14; }
+            100% { text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14; }
+        }
+
+        @keyframes glitchText {
+            0%, 90%, 100% { transform: translateX(0); }
+            10% { transform: translateX(-2px) skewX(-5deg); }
+            20% { transform: translateX(2px) skewX(5deg); }
+            30% { transform: translateX(-1px) skewX(-2deg); }
+        }
+
+        @keyframes chaosMove {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(20px) translateY(-10px); }
+            50% { transform: translateX(-15px) translateY(15px); }
+            75% { transform: translateX(10px) translateY(-20px); }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(-3deg); }
+        }
+
+        @keyframes borderRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero .joker-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .joker-cards {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">🃏 JOKER VAPE</div>
+            <ul class="nav-links">
+                <li><a href="#home">ГЛАВНАЯ</a></li>
+                <li><a href="#products">ТОВАРЫ</a></li>
+                <li><a href="#about">О НАС</a></li>
+                <li><a href="#contact">КОНТАКТЫ</a></li>
+            </ul>
+            <button class="cart-btn">🛒 КОРЗИНА (0)</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="joker-cards card-1">🃏</div>
+        <div class="joker-cards card-2">🎭</div>
+        <div class="joker-cards card-3">🃏</div>
+        <div class="joker-cards card-4">🎪</div>
+        
+        <div class="hero-content">
+            <h1>RANDM TORNADO 15000</h1>
+            <p class="joker-subtitle">"Why so serious? Let's vape!"</p>
+            <p>Добро пожаловать в мир хаоса и наслаждения! Наши премиум вейпы создадут безумно вкусный опыт, который заставит вас улыбаться как Джокер</p>
+            <a href="#products" class="cta-button">ВЫБЕРИ СВОЕ БЕЗУМИЕ</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">КАРТЫ НА СТОЛЕ</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>850mAh ЭНЕРГИЯ</h3>
+                    <p>Мощная батарея для бесконечного веселья и долгих вечеринок без перерыва</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💨</span>
+                    <h3>15000 ЗАТЯЖЕК</h3>
+                    <p>Хватит на целую армию клоунов! Невероятное количество затяжек в одном устройстве</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🧪</span>
+                    <h3>25ML БЕЗУМИЯ</h3>
+                    <p>Большой объем премиальной жидкости для долгого наслаждения вкусом</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔌</span>
+                    <h3>TYPE-C ЗАРЯДКА</h3>
+                    <p>Быстрая зарядка для тех, кто не любит ждать. Современно и удобно</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🌡️</span>
+                    <h3>0.9 OHM СПИРАЛЬ</h3>
+                    <p>Идеальное сопротивление для максимально насыщенного и яркого вкуса</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎨</span>
+                    <h3>27 ВКУСОВ ХАОСА</h3>
+                    <p>Огромная коллекция уникальных вкусов - от сладкого до дикого</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">НАШИ КАРТЫ</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🌪️</div>
+                    <h3 class="product-title">TORNADO SOLO</h3>
+                    <div class="product-specs">
+                        <div class="spec">15000 Затяжек</div>
+                        <div class="spec">850mAh</div>
+                        <div class="spec">25ML Жидкости</div>
+                        <div class="spec">Type-C</div>
+                    </div>
+                    <div class="price">1990₽</div>
+                    <button class="buy-btn" onclick="addToCart('tornado')">В КОРЗИНУ ХАОСА</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">🃏</div>
+                    <h3 class="product-title">JOKER'S TRIO</h3>
+                    <div class="product-specs">
+                        <div class="spec">3 Разных Вкуса</div>
+                        <div class="spec">45000 Затяжек</div>
+                        <div class="spec">Скидка 15%</div>
+                        <div class="spec">Бесплатная Доставка</div>
+                    </div>
+                    <div class="price">4990₽ <small style="text-decoration: line-through; opacity: 0.7;">5970₽</small></div>
+                    <button class="buy-btn" onclick="addToCart('set3')">ТРОИЦА БЕЗУМИЯ</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">👑</div>
+                    <h3 class="product-title">CHAOS KING SET</h3>
+                    <div class="product-specs">
+                        <div class="spec">5 Премиум Вкусов</div>
+                        <div class="spec">75000 Затяжек</div>
+                        <div class="spec">Скидка 25%</div>
+                        <div class="spec">VIP Упаковка</div>
+                    </div>
+                    <div class="price">7490₽ <small style="text-decoration: line-through; opacity: 0.7;">9950₽</small></div>
+                    <button class="buy-btn" onclick="addToCart('vip5')">КОРОЛЕВСКОЕ БЕЗУМИЕ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>🃏 СВЯЗЬ С ХАОСОМ</h3>
+                    <p>📱 Telegram: @joker_vape_shop</p>
+                    <p>📞 WhatsApp: +7 XXX XXX XX XX</p>
+                    <p>✉️ Email: chaos@jokervape.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>🎭 ПРАВИЛА ИГРЫ</h3>
+                    <a href="#">Доставка в хаос</a>
+                    <a href="#">Гарантия безумия</a>
+                    <a href="#">Возврат в Готэм</a>
+                    <a href="#">Сертификаты джокера</a>
+                </div>
+                <div class="footer-section">
+                    <h3>🌪️ ХИТ-ПАРАД ВКУСОВ</h3>
+                    <p>🍓 Strawberry Madness</p>
+                    <p>🫐 Blueberry Chaos</p>
+                    <p>🥭 Mango Mayhem</p>
+                    <p>❄️ Cool Mint Insanity</p>
+                </div>
+            </div>
+            <p style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #39ff14; color: #cccccc; font-size: 1rem;">
+                © 2024 JOKER VAPE SHOP. Все права защищены безумием. Продажа лицам старше 18 лет. "Why so serious?"
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let cartCount = 0;
+
+        function addToCart(productType) {
+            cartCount++;
+            document.querySelector('.cart-btn').textContent = `🛒 КОРЗИНА (${cartCount})`;
+            
+            // Джокер-анимация добавления в корзину
+            const btn = event.target;
+            btn.style.background = 'linear-gradient(45deg, #39ff14, #8b0000)';
+            btn.textContent = 'ДОБАВЛЕНО В ХАОС! 🃏';
+            btn.style.transform = 'scale(1.1)';
+            
+            setTimeout(() => {
+                btn.style.background = 'linear-gradient(45deg, #8b0000, #4a148c)';
+                btn.textContent = btn.textContent.includes('SOLO') ? 'В КОРЗИНУ ХАОСА' : 
+                                 btn.textContent.includes('TRIO') ? 'ТРОИЦА БЕЗУМИЯ' : 'КОРОЛЕВСКОЕ БЕЗУМИЕ';
+                btn.style.transform = 'scale(1)';
+            }, 2000);
+            
+            // Анимация корзины
+            const cartBtn = document.querySelector('.cart-btn');
+            cartBtn.style.animation = 'glitchText 0.5s ease';
+            setTimeout(() => {
+                cartBtn.style.animation = '';
+            }, 500);
+            
+            cart.push(productType);
+            console.log('Товар добавлен в корзину хаоса:', productType);
+        }
+
+        // Плавная прокрутка для навигации
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .product-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Случайные глитч-эффекты для заголовка
+        setInterval(() => {
+            if (Math.random() > 0.95) {
+                const title = document.querySelector('.hero h1');
+                title.style.animation = 'glitchText 0.3s ease';
+                setTimeout(() => {
+                    title.style.animation = 'glitchText 3s ease-in-out
